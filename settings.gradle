@@ -16,3 +16,4 @@ include ':rxbinding-recyclerview-v7'
 include ':rxbinding-recyclerview-v7-kotlin'
 
 include ':testing-utils'
+include ':debug-utils'

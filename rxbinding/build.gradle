@@ -8,6 +8,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'rxbinding-module'
 
 dependencies {
+  compile project(':debug-utils')
   compile rootProject.ext.rxJava
   compile rootProject.ext.supportAnnotations
 
@@ -54,3 +55,4 @@ android {
 }
 
 apply from: rootProject.file('gradle/gradle-mvn-push.gradle')
+apply from: rootProject.file('gradle/debug-utils.gradle')

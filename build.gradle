@@ -54,4 +54,7 @@ ext {
   rxAndroid = 'io.reactivex:rxandroid:1.0.1'
   junit = 'junit:junit:4.12'
   truth = 'com.google.truth:truth:0.27'
+
+  aspectTools = 'org.aspectj:aspectjtools:1.8.6'
+  aspectjrt = 'org.aspectj:aspectjrt:1.8.6'
 }
