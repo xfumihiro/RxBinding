@@ -2,11 +2,13 @@ package com.jakewharton.rxbinding.widget;
 
 import android.widget.RatingBar;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class RatingBarRatingChangeOnSubscribe implements Observable.OnSubscribe<Float> {
   private final RatingBar view;
 

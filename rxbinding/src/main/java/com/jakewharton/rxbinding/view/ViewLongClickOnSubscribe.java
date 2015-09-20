@@ -2,12 +2,14 @@ package com.jakewharton.rxbinding.view;
 
 import android.view.View;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func0;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class ViewLongClickOnSubscribe implements Observable.OnSubscribe<Object> {
   private final Object event = new Object();
   private final View view;

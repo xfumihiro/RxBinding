@@ -2,11 +2,13 @@ package com.jakewharton.rxbinding.widget;
 
 import android.widget.CompoundButton;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class CompoundButtonCheckedChangeOnSubscribe implements Observable.OnSubscribe<Boolean> {
   private final CompoundButton view;
 

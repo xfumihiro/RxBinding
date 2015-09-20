@@ -3,12 +3,14 @@ package com.jakewharton.rxbinding.widget;
 import android.view.KeyEvent;
 import android.widget.TextView;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class TextViewEditorActionEventOnSubscribe
     implements Observable.OnSubscribe<TextViewEditorActionEvent> {
   private final TextView view;

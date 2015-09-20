@@ -3,11 +3,13 @@ package com.jakewharton.rxbinding.support.v7.widget;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class ToolbarNavigationClickOnSubscribe implements Observable.OnSubscribe<Object> {
   private final Object event = new Object();
   private final Toolbar view;

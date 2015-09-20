@@ -3,12 +3,14 @@ package com.jakewharton.rxbinding.view;
 import android.view.DragEvent;
 import android.view.View;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class ViewDragEventOnSubscribe implements Observable.OnSubscribe<ViewDragEvent> {
   private final View view;
   private final Func1<? super ViewDragEvent, Boolean> handled;

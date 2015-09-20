@@ -2,11 +2,13 @@ package com.jakewharton.rxbinding.support.design.widget;
 
 import android.support.design.widget.Snackbar;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class SnackbarDismissesOnSubscribe implements Observable.OnSubscribe<Integer> {
   private final Snackbar view;
 

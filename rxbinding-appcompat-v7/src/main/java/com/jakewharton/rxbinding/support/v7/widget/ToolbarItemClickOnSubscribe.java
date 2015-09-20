@@ -3,11 +3,13 @@ package com.jakewharton.rxbinding.support.v7.widget;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class ToolbarItemClickOnSubscribe implements Observable.OnSubscribe<MenuItem> {
   private final Toolbar view;
 

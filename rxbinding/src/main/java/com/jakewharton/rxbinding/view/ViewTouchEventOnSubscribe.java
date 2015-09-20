@@ -4,12 +4,14 @@ import android.support.annotation.NonNull;
 import android.view.MotionEvent;
 import android.view.View;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 import rx.functions.Func1;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class ViewTouchEventOnSubscribe implements Observable.OnSubscribe<ViewTouchEvent> {
   private final View view;
   private final Func1<? super ViewTouchEvent, Boolean> handled;

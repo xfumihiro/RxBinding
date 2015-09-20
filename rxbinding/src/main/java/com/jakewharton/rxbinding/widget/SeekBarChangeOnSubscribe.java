@@ -2,11 +2,13 @@ package com.jakewharton.rxbinding.widget;
 
 import android.widget.SeekBar;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class SeekBarChangeOnSubscribe implements Observable.OnSubscribe<Integer> {
   private final SeekBar view;
 

@@ -4,12 +4,14 @@ import android.annotation.TargetApi;
 import android.widget.Toolbar;
 import android.view.View;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static android.os.Build.VERSION_CODES.LOLLIPOP;
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 @TargetApi(LOLLIPOP)
 final class ToolbarNavigationClickOnSubscribe implements Observable.OnSubscribe<Object> {
   private final Object event = new Object();

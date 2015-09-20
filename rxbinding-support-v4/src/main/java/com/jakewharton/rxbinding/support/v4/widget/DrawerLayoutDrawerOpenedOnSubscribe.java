@@ -4,11 +4,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.DrawerLayout.LayoutParams;
 import android.view.View;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class DrawerLayoutDrawerOpenedOnSubscribe implements Observable.OnSubscribe<Boolean> {
   private final DrawerLayout view;
   private final int gravity;

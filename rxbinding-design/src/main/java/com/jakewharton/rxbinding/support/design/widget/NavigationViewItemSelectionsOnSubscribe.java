@@ -4,11 +4,13 @@ import android.support.design.widget.NavigationView;
 import android.view.Menu;
 import android.view.MenuItem;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class NavigationViewItemSelectionsOnSubscribe implements Observable.OnSubscribe<MenuItem> {
   private final NavigationView view;
 

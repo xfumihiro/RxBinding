@@ -3,11 +3,13 @@ package com.jakewharton.rxbinding.support.design.widget;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.TabLayout.Tab;
 import com.jakewharton.rxbinding.internal.MainThreadSubscription;
+import com.jakewharton.rxbinding.weaving.annotation.Exclusive;
 import rx.Observable;
 import rx.Subscriber;
 
 import static com.jakewharton.rxbinding.internal.Preconditions.checkUiThread;
 
+@Exclusive
 final class TabLayoutSelectionsOnSubscribe implements Observable.OnSubscribe<Tab> {
   private final TabLayout view;
 
